@@ -16,12 +16,12 @@ class View(ft.UserControl):
         self._ddyear = None
         self._ddcolor = None
         self.btn_graph = None
-        self.txtOut = None
+        self.txtResGrafo = None
         self.txt_container = None
 
         self._ddnode = None
         self.btn_search = None
-        self.txtOut2 = None
+        self.txtArchi = None
 
     def load_interface(self):
         # title
@@ -42,8 +42,8 @@ class View(ft.UserControl):
         self._controller.fillDD()
 
         # List View where the reply is printed
-        self.txtOut = ft.ListView(expand=1, spacing=10, padding=10, auto_scroll=True)
-        self._page.controls.append(self.txtOut)
+        self.txtResGrafo = ft.ListView(expand=1, spacing=10, padding=10, auto_scroll=True)
+        self._page.controls.append(self.txtResGrafo)
 
         self._ddnode = ft.Dropdown(label="Product")
         self.btn_search = ft.ElevatedButton(text="Cerca Percorso", on_click=self._controller.handle_search)
@@ -51,8 +51,8 @@ class View(ft.UserControl):
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row2)
 
-        self.txtOut2 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
-        self._page.controls.append(self.txtOut2)
+        self.txtArchi = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
+        self._page.controls.append(self.txtArchi)
         self._page.update()
 
     @property
